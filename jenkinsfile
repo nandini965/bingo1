@@ -81,8 +81,8 @@ stage('Update Deployment File') {
                     git config user.email "nandhinigoud965@gmail.com"
                     git config user.name "nandini965"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" manifest.yml
-                    git add manifest.yml
+                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" manifests/manifest.yml
+                    git add manifests/manifest.yml
                      # Commit only if there are staged changes
                     git diff --cached --quiet || git commit -m "Update deployment image to version ${BUILD_NUMBER}"
 
