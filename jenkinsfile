@@ -81,8 +81,8 @@ stage('Update Deployment File') {
                     git config user.email "nandhinigoud965@gmail.com"
                     git config user.name "nandini965"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" manifests.yml
-                    git add manifests.yml
+                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" manifest.yml
+                    git add manifest.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 '''
